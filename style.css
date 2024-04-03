@@ -1,0 +1,80 @@
+html,
+body {
+  /* Functionality */
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* To stop X overflow from creating a horizontal scroll bar */
+
+  /* Dynamic Styling */
+  --text-color: white;
+  color: var(--text-color);
+
+  --bg-color: transparent;
+  --element-bg-color: black;
+
+  --drop-shadow-color: black;
+  --drop-shadow-displacement: 2px 2px;
+
+  --rgba-pink-translucent: rgba(150, 0, 150, 0.5);
+
+  /* Formatting */
+  margin: 0;
+  font-family: sans-serif;
+}
+/* HEADER */
+
+header {
+  width: 100%;
+  height: 5vh;
+
+  border-bottom: 5px solid black;
+  box-sizing: border-box;
+  background-color: var(--rgba-pink-translucent);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 35px;
+  padding-top: 2.5px;
+
+  font-weight: bold;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  height: 35px;
+  padding-left: var(--grid-gappage);
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  box-sizing: border-box;
+  width: max-content;
+  list-style-type: none;
+}
+
+nav a {
+  width: max-content;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}

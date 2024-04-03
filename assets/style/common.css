@@ -1,0 +1,18 @@
+/* COMMON CLASSES */
+/* Drop Shadow for readability */
+.drop-shadow-2px {
+  filter: drop-shadow(var(--drop-shadow-color) var(--drop-shadow-displacement));
+}
+
+/* Disable pointer events on the element*/
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
