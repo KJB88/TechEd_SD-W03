@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/core.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
-    <!-- JS -->
-    <script src="./assets/js/app.js" defer></script>
 
+    <!-- JS -->
+    <script src="./assets/js/galleryEntry.js" defer></script>
+    <script src="./assets/js/unsplashHandler.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
     <title>MyGallery</title>
 </head>
 
@@ -23,10 +25,8 @@
     <header>
         <!-- NAV -->
         <nav>
+            <h1 class="no-pointer-events drop-shadow-2px">My Gallery</h1>
             <ul>
-                <li class="drop-shadow-2px">
-                    <h1 class="no-pointer-events">My Gallery</h1>
-                </li>
                 <li>
                     <a href="https://github.com/KJB88/TechEd_SD-W03" class="drop-shadow-2px">Repo</a>
                 </li>
@@ -45,7 +45,9 @@
 
     <!-- MAIN -->
     <main>
-
+        <div class="main-img-div">
+            <img src="" alt="The ol' image gallery!" class="main-img" />
+        </div>
     </main>
 
     <!-- FOOTER -->

@@ -1,0 +1,24 @@
+@import "common.css";
+
+main {
+  background-color: var(--rgba-pink-translucent);
+}
+
+.main-img-div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img {
+  border: 15px black solid;
+
+  position: relative;
+  width: max-content;
+  height: 100vh;
+
+  background-size: cover;
+  background-position: center;
+  vertical-align: middle;
+}

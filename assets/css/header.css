@@ -1,12 +1,12 @@
 /* HEADER */
 
 header {
+  position: fixed;
+  margin: 10px;
   width: 100%;
   height: 5vh;
-
-  border-bottom: 5px solid black;
-  box-sizing: border-box;
-  background-color: var(--rgba-pink-translucent);
+  z-index: 3;
+  background-color: transparent;
 }
 
 header h1 {
@@ -17,12 +17,13 @@ header h1 {
 /* Nav */
 nav {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 
-  height: 35px;
+  height: inherit;
   padding-top: 2.5px;
-
+  align-content: center;
   font-weight: bold;
 }
 
@@ -37,6 +38,7 @@ nav ul {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -47,6 +49,7 @@ nav ul li {
 }
 
 nav a {
+  text-align: center;
   width: max-content;
   color: var(--text-color);
   text-decoration: none;
