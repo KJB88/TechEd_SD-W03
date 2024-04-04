@@ -12,13 +12,13 @@ main {
 }
 
 .main-img {
-  border: 15px black solid;
+  border: 10px black solid;
 
   position: relative;
   width: max-content;
-  height: 100vh;
+  height: 98.5vh;
+  width: 99.2vw;
 
   background-size: cover;
   background-position: center;
-  vertical-align: middle;
 }
