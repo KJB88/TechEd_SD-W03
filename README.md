@@ -28,7 +28,7 @@
 <h2>Requirements</h2>
 <ul>
 <li>One page, with a set of thumbnail images, and a larger image.</li>
-  <li>Styled appropriately with CSS, and make use of media queries.</li>
+  <li>Styled appropriately with CSS, and make use of media queries (mobile responsive).</li>
   <li>Use client-side JS to display the larger image when a thumbnail is selected.</li>
   <li>Use client-side JS to navigate between images using the keyboard (tab, enter).</li>
 </ul>
@@ -38,6 +38,7 @@
 <ul>
 <li><b>Keyboard Input</b>: Handle user interaction with keyboard only (as if they have no mouse). You can use tab and enter/space like for all websites. Possible use of also arrow keys.</li>
   <li><b>Voiceover Systems</b>: Use the OS's voiceover tools or a Screen Reader to have the computer announce the alt text of the selected image.</li>
+  <li><b>Unsplash API</b>: Populate the images with calls to Unsplash.</li>
 </ul>
 </section>
 <section>
