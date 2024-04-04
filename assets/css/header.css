@@ -1,25 +1,3 @@
-html,
-body {
-  /* Functionality */
-  scroll-behavior: smooth;
-  overflow-x: hidden; /* To stop X overflow from creating a horizontal scroll bar */
-
-  /* Dynamic Styling */
-  --text-color: white;
-  color: var(--text-color);
-
-  --bg-color: transparent;
-  --element-bg-color: black;
-
-  --drop-shadow-color: black;
-  --drop-shadow-displacement: 2px 2px;
-
-  --rgba-pink-translucent: rgba(150, 0, 150, 0.5);
-
-  /* Formatting */
-  margin: 0;
-  font-family: sans-serif;
-}
 /* HEADER */
 
 header {
