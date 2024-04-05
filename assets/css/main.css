@@ -22,9 +22,7 @@ main {
   overflow-x: scroll;
 
   height: 125px;
-  max-width: 1000px;
-  width: 600px;
-  min-width: 200px;
+  width: 35%;
   top: 11vh;
   left: 50%;
 
@@ -74,6 +72,28 @@ main {
   background-color: var(--rgba-pink-translucent);
 
   color: white;
+}
+
+#refresh-btn,
+#collapse-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#refresh-btn {
+  top: 9%;
+}
+
+#collapse-btn {
+  width: 25px;
+  height: 25px;
+  background-color: var(--rgba-pink-translucent);
+  color: white;
+}
+
+#collapse-btn {
+  top: 22%;
 }
 
 /* Search Form */

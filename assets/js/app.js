@@ -1,6 +1,10 @@
 /* CORE GALLERY FUNCTIONALITY */
 /* -------------------- */
 /* #region VARS. */
+
+//TODO: Mobile responsivity
+//TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)
+
 const randomImgURL = "https://source.unsplash.com/random/?"; // Unsplash API URL to receive random IMG
 
 const galleryLib = []; // Gallery Entry collection
@@ -16,18 +20,22 @@ const galleryImgs = galleryParent.querySelectorAll("img");
 const fallbackImg = "";
 
 let galleryIndex = 0; // Current IMG being displayed
+let isCollapsed = false; // Is the gallery currently collapsed?
 
+const nextBtn = document.getElementById("next-btn"); // Cycle forward in gallery button
+const prevBtn = document.getElementById("prev-btn"); // Cycle backwards in gallery button
+const refreshBtn = document.getElementById("refresh-btn"); // Refresh Gallery button
+const collapseBtn = document.getElementById("collapse-btn"); // Collapse gallery button
 /* #endregion VARS. */
 /* -------------------- */
 /* #region INIT. */
 
-const nextBtn = document.getElementById("next-btn");
 nextBtn.addEventListener("click", nextImg);
-const prevBtn = document.getElementById("prev-btn");
 prevBtn.addEventListener("click", prevImg);
+refreshBtn.addEventListener("click", resetGallery);
+collapseBtn.addEventListener("click", toggleCollapse);
 
-initializeGallery();
-generateRandomSearchTerm();
+initializeGallery(); // Initialize and configure the gallery
 
 function initializeGallery() {
   for (let i = 0; i < galleryLength; i++) {
@@ -88,7 +96,21 @@ function prevImg() {
   updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imageURL);
 }
 
+function toggleCollapse() {
+  if (!isCollapsed) {
+    galleryParent.classList.add("hide");
+    refreshBtn.classList.add("hide");
+    collapseBtn.innerText = "v";
+    collapseBtn.style.setProperty("top", "10%");
+    isCollapsed = true;
+    return;
+  }
+
+  galleryParent.classList.remove("hide");
+  refreshBtn.classList.remove("hide");
+  collapseBtn.innerText = "^";
+  collapseBtn.style.setProperty("top", "22%");
+  isCollapsed = false;
+}
 /* #endregion GALLERY NAV */
 /* -------------------- */
-//TODO: Mobile responsivity
-//TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)

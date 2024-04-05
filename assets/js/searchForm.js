@@ -11,7 +11,6 @@ randomBtn.addEventListener("click", () => {
 });
 searchBtn.addEventListener("click", () => {
   updateMainImg(`${randomImgURL}${getRandomAdjective()} ${formInput.value}`);
-  clearFormInput();
 });
 
 function clearFormInput() {
