@@ -4,21 +4,53 @@ main {
   background-color: var(--rgba-pink-translucent);
 }
 
-.main-img-div {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Large Central Image (BG) */
 .main-img {
   border: 10px black solid;
-
-  position: relative;
+  z-index: -1;
+  position: absolute;
   width: max-content;
-  height: 98.5vh;
-  width: 99.2vw;
+  height: 100vh;
+  width: 100vw;
 
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+}
+
+/* GALLERY */
+.gallery-container {
+  position: absolute;
+  overflow: hidden;
+
+  height: 125px;
+  width: 300px;
+  top: 12.5vh;
+  left: 50%;
+
+  z-index: 1;
+
+  border: black solid 2.5px;
+  border-radius: 4px;
+  background-color: var(--rgba-pink-translucent);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.gallery-img {
+  width: 200px;
+  height: 100%;
+  cursor: pointer;
+
+  border: black 2.5px solid;
+  box-sizing: border-box;
+}
+
+#next-btn {
+}
+
+#prev-btn {
 }

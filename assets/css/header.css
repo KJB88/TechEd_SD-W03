@@ -2,11 +2,11 @@
 
 header {
   position: fixed;
-  margin-top: 15px;
+  margin-top: 25px;
   width: 100%;
   height: 5vh;
-  z-index: 3;
   background-color: transparent;
+  z-index: 3;
 }
 
 header h1 {
@@ -18,7 +18,6 @@ header h1 {
 nav {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
   justify-content: center;
 
   height: inherit;
