@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/footer.css">
 
     <!-- JS -->
+    <script src="./assets/js/wordlibs.js" defer></script>
     <script src="./assets/js/helper.js" defer></script>
     <script src="./assets/js/galleryEntry.js" defer></script>
     <script src="./assets/js/bouncingRainbowText.js" defer></script>
@@ -48,16 +49,29 @@
     <main>
         <!-- Main IMG -->
         <div>
-            <img src="" alt="The ol' image gallery!" class="main-img drop-shadow-2px" />
+            <img src="" alt="The ol' image gallery!" id="main-img" class="drop-shadow-2px" />
+        </div>
+        <div id="gallery-container">
+            <img src="" alt="" class="gallery-img" />
+            <img src="" alt="" class="gallery-img" />
+            <img src="" alt="" class="gallery-img" />
+            <img src="" alt="" class="gallery-img" />
+            <img src="" alt="" class="gallery-img" />
         </div>
 
-        <div class="gallery-container">
-            <img src="https://source.unsplash.com/random/" alt="" class="gallery-img" />
-            <img src="https://source.unsplash.com/random/" alt="" class="gallery-img" />
-            <img src="https://source.unsplash.com/random/" alt="" class="gallery-img" />
-            <img src="https://source.unsplash.com/random/" alt="" class="gallery-img" />
-            <img src="https://source.unsplash.com/random/" alt="" class="gallery-img" />
+        <div class="gallery-btn-div">
+            <button id="prev-btn" class="drop-shadow-2px">&lt;</button>
+            <button id="next-btn" class="drop-shadow-2px"> &gt;</button>
         </div>
+
+        <form class="search-form">
+            <input id="search-input-field" />
+            <div>
+                <button id="random-btn">Random</button>
+                <button id="search-btn">Search</button>
+
+            </div>
+        </form>
     </main>
 
     <!-- FOOTER -->

@@ -5,7 +5,7 @@ main {
 }
 
 /* Large Central Image (BG) */
-.main-img {
+#main-img {
   border: 10px black solid;
   z-index: -1;
   position: absolute;
@@ -17,7 +17,7 @@ main {
 }
 
 /* GALLERY */
-.gallery-container {
+#gallery-container {
   position: absolute;
   overflow: hidden;
 
@@ -31,7 +31,7 @@ main {
   border: black solid 2.5px;
   border-radius: 4px;
   background-color: var(--rgba-pink-translucent);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(px);
 
   display: flex;
   justify-content: center;
@@ -42,15 +42,52 @@ main {
 
 .gallery-img {
   width: 200px;
-  height: 100%;
+  height: 125px;
   cursor: pointer;
-
+  object-fit: cover;
   border: black 2.5px solid;
   box-sizing: border-box;
 }
 
-#next-btn {
+.gallery-btn-div {
+  position: absolute;
+  width: 100%;
+  bottom: 50vh;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
+#next-btn,
 #prev-btn {
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--rgba-pink-translucent);
+
+  color: white;
+}
+
+/* Search Form */
+.search-form {
+  position: absolute;
+  width: auto;
+  height: max-content;
+
+  top: 30%;
+  left: 50%;
+
+  background-color: transparent;
+  transform: translateX(-50%);
+}
+
+.search-form div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: auto;
+  height: auto;
 }
