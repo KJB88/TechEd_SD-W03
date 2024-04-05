@@ -1,12 +1,12 @@
 /* CORE GALLERY FUNCTIONALITY */
 /* -------------------- */
 /* #region VARS. */
+const randomImgURL = "https://source.unsplash.com/random/?"; // Unsplash API URL to receive random IMG
 
 const galleryLib = []; // Gallery Entry collection
 const galleryLength = 5; // Initial amount of entries displayed in selection
 
 const mainImgElement = document.getElementById("main-img"); // Main IMG element
-const randomImgURL = "https://source.unsplash.com/random/"; // Unsplash API URL to receive random IMG
 
 // Select all IMG tags within gallery-container
 const galleryParent = document.getElementById("gallery-container");
@@ -27,14 +27,14 @@ const prevBtn = document.getElementById("prev-btn");
 prevBtn.addEventListener("click", prevImg);
 
 initializeGallery();
-getRandomisedSearchTerm();
+generateRandomSearchTerm();
 
 function initializeGallery() {
   for (let i = 0; i < galleryLength; i++) {
     galleryLib.push(
       new GalleryEntry(
         i,
-        `${randomImgURL}${getRandomisedSearchTerm()}`,
+        `${randomImgURL}${generateRandomSearchTerm()}`,
         galleryImgs[i]
       )
     );
@@ -42,17 +42,29 @@ function initializeGallery() {
 
   mainImgElement.src = galleryLib[galleryIndex].imageURL;
 }
+
 /* #endregion INIT. */
 /* -------------------- */
 /* #region GALLERY STATE */
 
-function updateMainImg(imgIndex, imageURL) {
-  mainImgElement.src = imageURL;
+function resetGallery() {
+  galleryLib.length = 0;
+  galleryIndex = 0;
+
+  initializeGallery();
+  clearFormInput();
+}
+
+function updateMainImgFromSelection(imgIndex, imageURL) {
+  updateMainImg(imageURL);
   galleryIndex = imgIndex;
 
   updateGallerySelection(imgIndex);
 }
 
+function updateMainImg(imageURL) {
+  mainImgElement.src = imageURL;
+}
 function updateGallerySelection(imgIndex) {
   galleryParent.firstChild = galleryImgs[imgIndex];
 }
@@ -65,7 +77,7 @@ function nextImg() {
 
   if (galleryIndex >= galleryLib.length) galleryIndex = 0;
 
-  updateMainImg(galleryIndex, galleryLib[galleryIndex].imageURL);
+  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imageURL);
 }
 
 function prevImg() {
@@ -73,12 +85,10 @@ function prevImg() {
 
   if (galleryIndex < 0) galleryIndex = galleryLib.length - 1;
 
-  updateMainImg(galleryIndex, galleryLib[galleryIndex].imageURL);
+  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imageURL);
 }
 
 /* #endregion GALLERY NAV */
 /* -------------------- */
 //TODO: Mobile responsivity
 //TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)
-//TODO: Carousel
-//TODO: Form input and querying

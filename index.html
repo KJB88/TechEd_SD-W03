@@ -16,6 +16,7 @@
     <script src="./assets/js/wordlibs.js" defer></script>
     <script src="./assets/js/helper.js" defer></script>
     <script src="./assets/js/galleryEntry.js" defer></script>
+    <script src="./assets/js/searchForm.js" defer></script>
     <script src="./assets/js/bouncingRainbowText.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
     <title>Not-Splash: Totally Original Gallery!</title>
@@ -59,14 +60,16 @@
             <img src="" alt="" class="gallery-img" />
         </div>
 
+        <!-- Cycle Gallery -->
         <div class="gallery-btn-div">
             <button id="prev-btn" class="drop-shadow-2px">&lt;</button>
             <button id="next-btn" class="drop-shadow-2px"> &gt;</button>
         </div>
 
-        <form class="search-form">
-            <input id="search-input-field" />
-            <div>
+        <!-- Search via Query -->
+        <form class="search-form drop-shadow-2px">
+            <input id="search-input-field" placeholder="Search for a keyword!" />
+            <div class="btn-div">
                 <button id="random-btn">Random</button>
                 <button id="search-btn">Search</button>
 

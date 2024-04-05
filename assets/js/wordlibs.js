@@ -2,13 +2,17 @@
 Word Arrays for name randomisation
  --------------------------- */
 
-function getRandomisedSearchTerm() {
-  const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
-  const noun = nouns[Math.floor(Math.random() * nouns.length)];
-  console.log(`${adj} ${noun}`);
-  return `${adj} ${noun}`;
+function generateRandomSearchTerm() {
+  return `${getRandomAdjective()} ${getRandomNoun()}`;
 }
 
+function getRandomAdjective() {
+  return adjectives[Math.floor(Math.random() * adjectives.length)];
+}
+
+function getRandomNoun() {
+  return nouns[Math.floor(Math.random() * nouns.length)];
+}
 /* Array of adjectives*/
 const adjectives = [
   "able",
