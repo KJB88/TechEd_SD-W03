@@ -2,13 +2,38 @@
 /* -------------------- */
 /* #region VARS. */
 
-//TODO: Mobile responsivity
 //TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)
+// TODO: Center scroll bar to selected image
 
-const randomImgURL = "https://source.unsplash.com/random/?"; // Unsplash API URL to receive random IMG
+const localImgs = [
+  {
+    path: "./assets/img/arthas1.jpg",
+    alt: "Sleepy tuxedo cat",
+  },
+  {
+    path: "./assets/img/arthas2.jpg",
+    alt: "Curious tuxedo cat",
+  },
+  {
+    path: "./assets/img/loki1.jpg",
+    alt: "Grumpy void cat",
+  },
+  {
+    path: "./assets/img/loki2.jpg",
+    alt: "Void cat loaf",
+  },
+  {
+    path: "./assets/img/luna1.jpg",
+    alt: "Comfortable tortoiseshell cat",
+  },
+  {
+    path: "./assets/img/luna2.jpg",
+    alt: "Curious tortoiseshell cat",
+  },
+];
 
 const galleryLib = []; // Gallery Entry collection
-const galleryLength = 5; // Initial amount of entries displayed in selection
+const galleryLength = 6; // Initial amount of entries displayed in selection
 
 const mainImgElement = document.getElementById("main-img"); // Main IMG element
 const galleryOuter = document.getElementById("gallery-outer");
@@ -25,7 +50,6 @@ let isCollapsed = false; // Is the gallery currently collapsed?
 
 const nextBtn = document.getElementById("next-btn"); // Cycle forward in gallery button
 const prevBtn = document.getElementById("prev-btn"); // Cycle backwards in gallery button
-const refreshBtn = document.getElementById("refresh-btn"); // Refresh Gallery button
 const collapseBtn = document.getElementById("collapse-btn"); // Collapse gallery button
 const navDropdown = document.getElementById("nav-dropdown"); // Navigation Dropdown
 const navOptions = navDropdown.options; // Options within dropdown
@@ -43,22 +67,21 @@ for (let i = 0; i < navOptions.length; i++) {
 
 nextBtn.addEventListener("click", nextImg);
 prevBtn.addEventListener("click", prevImg);
-refreshBtn.addEventListener("click", resetGallery);
 collapseBtn.addEventListener("click", toggleCollapse);
+
+galleryIndex = Math.floor(Math.random() * galleryLength); // Randomise starting main Img
+
 initializeGallery(); // Initialize and configure the gallery
 
 function initializeGallery() {
   for (let i = 0; i < galleryLength; i++) {
     galleryLib.push(
-      new GalleryEntry(
-        i,
-        `${randomImgURL}${generateRandomSearchTerm()}`,
-        galleryImgs[i]
-      )
+      new GalleryEntry(i, localImgs[i].path, localImgs[i].alt, galleryImgs[i])
     );
   }
 
-  mainImgElement.src = galleryLib[galleryIndex].imageURL;
+  mainImgElement.src = galleryLib[galleryIndex].imgPath;
+  mainImgElement.alt = galleryLib[galleryIndex].altText;
 }
 
 /* #endregion INIT. */
@@ -73,18 +96,14 @@ function resetGallery() {
   clearFormInput();
 }
 
-function updateMainImgFromSelection(imgIndex, imageURL) {
-  updateMainImg(imageURL);
+function updateMainImgFromSelection(imgIndex, imgPath, altText) {
+  updateMainImg(imgPath, altText);
   galleryIndex = imgIndex;
-
-  updateGallerySelection(imgIndex);
 }
 
-function updateMainImg(imageURL) {
-  mainImgElement.src = imageURL;
-}
-function updateGallerySelection(imgIndex) {
-  galleryParent.firstChild = galleryImgs[imgIndex];
+function updateMainImg(imgPath, altText) {
+  mainImgElement.src = imgPath;
+  mainImgElement.alt = altText;
 }
 /* #endregion GALLERY STATE */
 /* -------------------- */
@@ -95,7 +114,7 @@ function nextImg() {
 
   if (galleryIndex >= galleryLib.length) galleryIndex = 0;
 
-  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imageURL);
+  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imgPath);
 }
 
 function prevImg() {
@@ -103,20 +122,18 @@ function prevImg() {
 
   if (galleryIndex < 0) galleryIndex = galleryLib.length - 1;
 
-  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imageURL);
+  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imgPath);
 }
 
 function toggleCollapse() {
   if (!isCollapsed) {
     galleryParent.classList.add("hide");
-    refreshBtn.classList.add("hide");
     collapseBtn.innerText = "v";
     isCollapsed = true;
     return;
   }
 
   galleryParent.classList.remove("hide");
-  refreshBtn.classList.remove("hide");
   collapseBtn.innerText = "^";
   //
   isCollapsed = false;

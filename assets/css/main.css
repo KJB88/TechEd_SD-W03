@@ -20,7 +20,7 @@ main {
 Contains refresh button, collapse button & gallery selection */
 #gallery-outer {
   position: absolute;
-  top: 11vh;
+  top: 120px;
   left: 50%;
 
   display: flex;
@@ -32,13 +32,9 @@ Contains refresh button, collapse button & gallery selection */
 }
 
 #collapse-btn {
+  top: 10%;
   width: 25px;
   height: 25px;
-  background-color: var(--rgba-pink-translucent);
-  color: white;
-}
-
-#refresh-btn {
   background-color: var(--rgba-pink-translucent);
   color: white;
 }
@@ -139,6 +135,10 @@ Contains refresh button, collapse button & gallery selection */
 
   background-color: transparent;
   transform: translateX(-50%);
+}
+
+#response-text {
+  text-align: center;
 }
 
 .search-form .btn-div {

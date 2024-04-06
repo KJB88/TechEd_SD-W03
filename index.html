@@ -18,6 +18,7 @@
     <script src="./assets/js/galleryEntry.js" defer></script>
     <script src="./assets/js/searchForm.js" defer></script>
     <script src="./assets/js/bouncingRainbowText.js" defer></script>
+    <script src="./assets/js/fetcher.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
     <title>Not-Splash: Totally Original Gallery!</title>
 </head>
@@ -67,8 +68,8 @@
                 <img src="" alt="" class="gallery-img" />
                 <img src="" alt="" class="gallery-img" />
                 <img src="" alt="" class="gallery-img" />
+                <img src="" alt="" class="gallery-img" />
             </div>
-            <button id="refresh-btn" class="drop-shadow-2px">Fetch a new selection!</button>
         </div>
 
         <!-- Cycle Gallery -->
@@ -79,11 +80,11 @@
 
         <!-- Search via Query -->
         <form class="search-form drop-shadow-2px">
+            <span id="response-text">Search or Randomise using Unsplash!</span>
             <input id="search-input-field" placeholder="Search for a keyword!" />
             <div class="btn-div">
-                <button id="random-btn">Random</button>
-                <button id="search-btn">Search</button>
-
+                <button id="random-btn">Random on Unsplash!</button>
+                <button id="search-btn">Search on Unsplash!</button>
             </div>
         </form>
     </main>
