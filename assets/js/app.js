@@ -26,6 +26,7 @@ const nextBtn = document.getElementById("next-btn"); // Cycle forward in gallery
 const prevBtn = document.getElementById("prev-btn"); // Cycle backwards in gallery button
 const refreshBtn = document.getElementById("refresh-btn"); // Refresh Gallery button
 const collapseBtn = document.getElementById("collapse-btn"); // Collapse gallery button
+
 /* #endregion VARS. */
 /* -------------------- */
 /* #region INIT. */
@@ -101,7 +102,7 @@ function toggleCollapse() {
     galleryParent.classList.add("hide");
     refreshBtn.classList.add("hide");
     collapseBtn.innerText = "v";
-    collapseBtn.style.setProperty("top", "10%");
+    //collapseBtn.style.setProperty("top", "10vh");
     isCollapsed = true;
     return;
   }
@@ -109,7 +110,7 @@ function toggleCollapse() {
   galleryParent.classList.remove("hide");
   refreshBtn.classList.remove("hide");
   collapseBtn.innerText = "^";
-  collapseBtn.style.setProperty("top", "22%");
+  //collapseBtn.style.setProperty("top", "27.5vh");
   isCollapsed = false;
 }
 /* #endregion GALLERY NAV */
