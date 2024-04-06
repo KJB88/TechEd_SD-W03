@@ -43,15 +43,21 @@
 </section>
 <section>
 <h2>Implementation (of Requirements)</h2>
-  <h3>TODO</h3>
+  <h3>Not-Splash: The Totally Original Gallery!</h3>
+  <p>The webpage has an attractive and logical layout. It is styled in a pleasing way using CSS. Several elements are designed to be naturally responsive independent of media queries. However, some elements (header elements, main image gallery) are forced to be responsive via media queries dependent on screen height and width. All images have alternate text, different titles and applicable elements have ARIA labelling. The nav links will swap from individual anchors to a dropdown when the screen width becomes too small.</p>
+    <h3>I see Cat, I click Cat</h3>
+  <p>The gallery selection will populate the main IMG on a click of an individual piece of internal content. Click my cats to your hearts content! Just mind the murder mittens.</p>
+      <h3>The Tabulator and Carriage Return</h3>
   <p>TODO</p>
 </section>
 <section>
   <h2>Implementation (of Stretch Goals)</h2>
-  <h3>TODO</h3>
-  <p>
-TODO
-  </p>
+  <h3>Pro Gamer Move</h3>
+  <p>TODO</p>
+    <h3>Beep Boop: Reading the Screen</h3>
+    <p>TODO</p>
+      <h3>418: I'm a Teapot</h3>
+      <p>Fetcher.js sends requests to the Unsplash API (and also their public API) to request random IMGs and also IMGs based on a search term. This .js falls back to using their public API to retrieve just IMGs (no alt data) if it cannot receive a succesful status code from the Unsplash developer API.</p>
 </section>
 <section>
   <h2>Honorary Mentions</h2>
