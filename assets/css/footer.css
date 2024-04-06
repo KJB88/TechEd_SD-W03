@@ -12,3 +12,17 @@ footer {
   margin-bottom: 15px;
   font-size: 18px;
 }
+
+/* small screens */
+@media (max-height: 600px) {
+  footer {
+    visibility: hidden;
+  }
+}
+
+/* Large screens */
+@media (min-height: 600px) {
+  footer {
+    visibility: visible;
+  }
+}

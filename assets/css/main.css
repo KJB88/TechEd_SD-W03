@@ -43,13 +43,49 @@ Contains refresh button, collapse button & gallery selection */
   color: white;
 }
 
+/* Small screens */
+@media (max-width: 600px) {
+  #gallery-container {
+    height: 200px;
+    width: max-content;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    flex-flow: column nowrap;
+    box-sizing: content-box;
+  }
+
+  .gallery-img {
+    width: auto;
+    max-width: 300px;
+    min-width: 300px;
+  }
+}
+/* Wide screens */
+@media (min-width: 600px) {
+  #gallery-container {
+    height: 125px;
+    width: 35%;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+    flex-flow: row nowrap;
+  }
+
+  .gallery-img {
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+
+    height: 125px;
+    max-height: 125px;
+    min-height: 125px;
+
+    box-sizing: content-box;
+  }
+}
 #gallery-container {
-  overflow-y: hidden;
-  overflow-x: scroll;
-
-  height: 125px;
-  width: 35%;
-
   z-index: 1;
 
   border: black solid 2.5px;
@@ -61,14 +97,6 @@ Contains refresh button, collapse button & gallery selection */
 }
 
 .gallery-img {
-  width: 200px;
-  max-width: 200px;
-  min-width: 200px;
-
-  height: 125px;
-  max-height: 125px;
-  min-height: 125px;
-
   cursor: pointer;
   object-fit: cover;
   border: black 2.5px solid;
