@@ -76,6 +76,9 @@ for (let i = 0; i < navOptions.length; i++) {
 /* -------------------- */
 /* #region INIT. */
 
+document.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") updateMainImgFromSelection(galleryLib[galleryIndex]);
+});
 nextBtn.addEventListener("click", nextImg);
 prevBtn.addEventListener("click", prevImg);
 collapseBtn.addEventListener("click", toggleCollapse);
@@ -163,5 +166,7 @@ function toggleCollapse() {
   collapseBtn.ariaLabel = "Collapse the image selection";
   isCollapsed = false;
 }
+
+function sliderSnap() {}
 /* #endregion GALLERY NAV */
 /* -------------------- */

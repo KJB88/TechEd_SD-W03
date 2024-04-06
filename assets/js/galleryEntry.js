@@ -19,6 +19,36 @@ class GalleryEntry {
     // Hook in member element to allow for updating main IMG based on this selection
     this.imgElement.addEventListener("click", () => {
       updateMainImgFromSelection(this);
+      snapToElement(this.index, this.imgElement);
+    });
+
+    this.imgElement.addEventListener("focus", () => {
+      snapToElement(this.index, this.imgElement);
+    });
+
+    this.imgElement.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        updateMainImgFromSelection(this);
+      }
     });
   }
+}
+
+function snapToElement(index, thumbnail) {
+  /* Stolen from Tim (who also shamelessly stole it) */
+
+  // Get rects that define position and volume of elements on page
+  const thumbRect = thumbnail.getBoundingClientRect();
+  const containerRect = galleryOuter.getBoundingClientRect();
+
+  // Calculate center of thumbnail by factoring in distance from edge and center of parent
+  let scrollLeftPos;
+  scrollLeftPos =
+    thumbnail.offsetLeft + thumbRect.width / 2 - containerRect.width / 2;
+
+  // Snap scroll to point
+  galleryParent.scrollTo({
+    left: scrollLeftPos,
+    behavior: "smooth",
+  });
 }
