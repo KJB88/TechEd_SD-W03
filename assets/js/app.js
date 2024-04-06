@@ -2,8 +2,9 @@
 /* -------------------- */
 /* #region VARS. */
 
-//TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)
-// TODO: Center scroll bar to selected image
+//TODO: screen reading/ARIA
+//TODO: physical impairment keyboard events
+//TODO: Center scroll bar to selected image
 
 /* Collection of local data */
 const localImgs = [
