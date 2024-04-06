@@ -1,4 +1,4 @@
-/* CORE GALLERY FUNCTIONALITY */
+/* CORE GALLERY */
 /* -------------------- */
 /* #region VARS. */
 

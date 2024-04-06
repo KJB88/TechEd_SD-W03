@@ -9,10 +9,12 @@
   pointer-events: none;
 }
 
+/* Hide element */
 .hide {
   visibility: hidden;
 }
 
+/* Show element */
 .show {
   visibility: visible;
 }

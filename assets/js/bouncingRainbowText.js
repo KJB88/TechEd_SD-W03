@@ -1,6 +1,5 @@
-/* --------------------------- 
-Rainbow Text Handler
- --------------------------- */
+/* BOUNCING RAINBOW TEXT */
+/* -------------------- */
 // #region INIT. & VARS
 
 /* Fetch DOM objects */

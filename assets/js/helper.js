@@ -1,6 +1,5 @@
-/* --------------------------- 
-Common stateless helper functions
- --------------------------- */
+/* COMMON HELPERS */
+/* -------------------- */
 
 /* Steps the Current value by Step.
 Hanldes overflow by wrapping around from Max to Min and Min to Max */
@@ -32,8 +31,10 @@ function capitliseFirstLetter(text) {
 function isNumber(value) {
   return typeof value === "number";
 }
-/* --------------------------- */
 
+/* Clamp a value between a given min and a given max */
 function clampNumber(value, min, max) {
   return Math.max(Math.min(value, Math.max(min, max)), Math.min(min, max));
 }
+
+/* --------------------------- */

@@ -1,18 +1,26 @@
-/* --------------------------- 
-Word Arrays for name randomisation
- --------------------------- */
+/* WORDLIB RANDOMISER */
+/* -------------------- */
+/* #region GET RANDOMS */
 
-function generateRandomSearchTerm() {
+/* Get a random adjective-noun */
+function generateAdjectiveNoun() {
   return `${getRandomAdjective()} ${getRandomNoun()}`;
 }
 
+/* Get a random adjective */
 function getRandomAdjective() {
   return adjectives[Math.floor(Math.random() * adjectives.length)];
 }
 
+/* Get a random noun */
 function getRandomNoun() {
   return nouns[Math.floor(Math.random() * nouns.length)];
 }
+
+/* #endregion GET RANDOMS */
+/* -------------------- */
+/* #region WORD ARRAYS */
+
 /* Array of adjectives*/
 const adjectives = [
   "able",
@@ -5795,4 +5803,6 @@ const nouns = [
   "zoot-suit",
   "zucchini",
 ];
-/* --------------------------- */
+
+/* #endregion WORD ARRAYS */
+/* -------------------- */

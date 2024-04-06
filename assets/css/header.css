@@ -1,5 +1,5 @@
 /* HEADER */
-/* Small screens */
+/* SMALL SCREENS */
 @media (max-width: 600px) {
   header h1 {
     font-size: calc(2vw + 2vh);
@@ -9,8 +9,8 @@
     min-width: 250px;
   }
 
-  header h1:after {
-    content: "Not-Splash";
+  header .subtitle {
+    visibility: hidden;
   }
   nav select {
     visibility: visible;
@@ -19,14 +19,15 @@
     visibility: hidden;
   }
 }
-/* Wide Screens */
+
+/* LARGE SCREENS */
 @media (min-width: 600px) {
   header h1 {
     font-size: 32px;
   }
 
-  header h1:after {
-    content: "Not-Splash: Totally Original Gallery!";
+  header .subtitle {
+    visibility: visible;
   }
 
   nav select {
@@ -38,15 +39,11 @@
   }
 }
 
-/* Commons */
-header h1 {
-  margin: 0;
-}
-
+/* UNIVERSAL */
 header {
   position: fixed;
   margin-top: 25px;
-  width: 100%;
+  width: 100vw;
   height: 5vh;
   background-color: transparent;
   z-index: 3;
@@ -57,11 +54,22 @@ nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-
+  gap: 0.5rem;
   height: inherit;
   padding-top: 2.5px;
   align-content: center;
   font-weight: bold;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Totally Original Gallery! */
+header .subtitle {
+  position: fixed;
+  font-size: 16px;
+  top: 3%;
 }
 
 nav select {

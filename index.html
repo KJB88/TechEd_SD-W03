@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This page is an image gallery with a selection of cat thumbnails." />
+
+    <!-- Shut up Favicon -->
+    <link rel="shortcut icon" href="#">
+
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/core.css">
     <link rel="stylesheet" href="./assets/css/common.css">
@@ -20,7 +24,7 @@
     <script src="./assets/js/bouncingRainbowText.js" defer></script>
     <script src="./assets/js/fetcher.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
-    <title>Not-Splash: Totally Original Gallery!</title>
+    <title>Not-Splash: Totally Original Gallery</title>
 </head>
 
 <body>
@@ -29,7 +33,10 @@
     <header>
         <!-- NAV -->
         <nav>
-            <h1 class="no-pointer-events drop-shadow-2px"></h1>
+            <h1 class="no-pointer-events drop-shadow-2px" aria-label="Title of the website: Not-Splash!">Not-Splash
+            </h1>
+            <h2 class="no-pointer-events drop-shadow-2px subtitle"
+                aria-label="Subtitle of the website: Totally Original Gallery!">Totally Original Gallery!</h2>
             <select id="nav-dropdown" class="drop-shadow-2px">
                 <option value="https://github.com/KJB88/TechEd_SD-W03">Repo</option>
                 <option value="https://github.com/KJB88">Github</option>
@@ -61,7 +68,8 @@
         </div>
         <!-- Gallery Selection -->
         <div id="gallery-outer">
-            <button id="collapse-btn" class="drop-shadow-2px" aria-label="Collapse the image gallery.">&#x005E</button>
+            <button id="collapse-btn" class="drop-shadow-2px"
+                aria-label="Collapse the image selection.">&#x005E</button>
             <div id="gallery-container">
                 <img src="" alt="" title="" class="gallery-img" />
                 <img src="" alt="" title="" class="gallery-img" />
@@ -79,7 +87,8 @@
         </div>
 
         <!-- Search via Query -->
-        <form class="search-form drop-shadow-2px">
+        <form class="search-form drop-shadow-2px"
+            aria-label="Input form to type in a search query and find an image based on it.">
             <span id="response-text">Search or Randomise using Unsplash!</span>
             <input id="search-input-field" placeholder="Search for a keyword!" />
             <div class="btn-div">
