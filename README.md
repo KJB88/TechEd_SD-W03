@@ -44,7 +44,7 @@
 <section>
 <h2>Implementation (of Requirements)</h2>
   <h3>Not-Splash: The Totally Original Gallery!</h3>
-  <p>The webpage has an attractive and logical layout. It is styled in a pleasing way using CSS. Several elements are designed to be naturally responsive independent of media queries. However, some elements (header elements, main image gallery) are forced to be responsive via media queries dependent on screen height and width. All images have alternate text, different titles and applicable elements have ARIA labelling. The nav links will swap from individual anchors to a dropdown when the screen width becomes too small.</p>
+  <p>The webpage has an attractive and logical layout. It is styled in a pleasing way using CSS. Several elements are designed to be naturally responsive independent of media queries. However, some elements (header elements, main image gallery) are forced to be responsive via media queries dependent on screen height and width. All images have alternate text, different titles and applicable elements have ARIA labelling. The nav links will swap from individual anchors to a dropdown when the screen width becomes too small. Verified without issue by WAVE.</p>
     <h3>I see Cat, I click Cat</h3>
   <p>The gallery selection will populate the main IMG on a click of an individual piece of internal content. Click my cats to your hearts content! Just mind the murder mittens.</p>
       <h3>The Tabulator and Carriage Return</h3>
