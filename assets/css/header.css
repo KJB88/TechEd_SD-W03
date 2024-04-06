@@ -1,4 +1,10 @@
 /* HEADER */
+@media (max-width: 600px) {
+  header h1 {
+    margin: 0;
+    font-size: calc(2vw + 2vh);
+  }
+}
 
 header {
   position: fixed;
@@ -9,11 +15,12 @@ header {
   z-index: 3;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
+@media (min-width: 600px) {
+  header h1 {
+    margin: 0;
+    font-size: 32px;
+  }
 }
-
 /* Nav */
 nav {
   display: flex;

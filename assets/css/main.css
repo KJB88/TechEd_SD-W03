@@ -32,7 +32,6 @@ Contains refresh button, collapse button & gallery selection */
 }
 
 #collapse-btn {
-  top: 27.5vh;
   width: 25px;
   height: 25px;
   background-color: var(--rgba-pink-translucent);
@@ -43,6 +42,7 @@ Contains refresh button, collapse button & gallery selection */
   background-color: var(--rgba-pink-translucent);
   color: white;
 }
+
 #gallery-container {
   overflow-y: hidden;
   overflow-x: scroll;
@@ -99,6 +99,9 @@ Contains refresh button, collapse button & gallery selection */
 
 /* Search Form */
 .search-form {
+  display: flex;
+  flex-flow: column nowrap;
+
   position: absolute;
   width: auto;
   height: max-content;
@@ -116,6 +119,7 @@ Contains refresh button, collapse button & gallery selection */
   justify-content: space-evenly;
   width: auto;
   height: auto;
+  gap: auto;
   margin-top: 7.5px;
 }
 

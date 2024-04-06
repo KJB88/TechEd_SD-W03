@@ -11,6 +11,7 @@ const galleryLib = []; // Gallery Entry collection
 const galleryLength = 5; // Initial amount of entries displayed in selection
 
 const mainImgElement = document.getElementById("main-img"); // Main IMG element
+const galleryOuter = document.getElementById("gallery-outer");
 
 // Select all IMG tags within gallery-container
 const galleryParent = document.getElementById("gallery-container");
@@ -102,7 +103,6 @@ function toggleCollapse() {
     galleryParent.classList.add("hide");
     refreshBtn.classList.add("hide");
     collapseBtn.innerText = "v";
-    //collapseBtn.style.setProperty("top", "10vh");
     isCollapsed = true;
     return;
   }
@@ -110,7 +110,7 @@ function toggleCollapse() {
   galleryParent.classList.remove("hide");
   refreshBtn.classList.remove("hide");
   collapseBtn.innerText = "^";
-  //collapseBtn.style.setProperty("top", "27.5vh");
+  //
   isCollapsed = false;
 }
 /* #endregion GALLERY NAV */
