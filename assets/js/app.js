@@ -8,26 +8,32 @@
 const localImgs = [
   {
     path: "./assets/img/arthas1.jpg",
+    thumb: "./assets/img/thumbnails/arthas1_thumb.webp",
     alt: "Sleepy tuxedo cat",
   },
   {
     path: "./assets/img/arthas2.jpg",
+    thumb: "./assets/img/thumbnails/arthas2_thumb.webp",
     alt: "Curious tuxedo cat",
   },
   {
     path: "./assets/img/loki1.jpg",
+    thumb: "./assets/img/thumbnails/loki1_thumb.webp",
     alt: "Grumpy void cat",
   },
   {
     path: "./assets/img/loki2.jpg",
+    thumb: "./assets/img/thumbnails/loki2_thumb.webp",
     alt: "Void cat loaf",
   },
   {
     path: "./assets/img/luna1.jpg",
+    thumb: "./assets/img/thumbnails/luna1_thumb.webp",
     alt: "Comfortable tortoiseshell cat",
   },
   {
     path: "./assets/img/luna2.jpg",
+    thumb: "./assets/img/thumbnails/luna2_thumb.webp",
     alt: "Curious tortoiseshell cat",
   },
 ];
@@ -41,9 +47,6 @@ const galleryOuter = document.getElementById("gallery-outer");
 // Select all IMG tags within gallery-container
 const galleryParent = document.getElementById("gallery-container");
 const galleryImgs = galleryParent.querySelectorAll("img");
-
-// Fallback IMG if unable to load any other IMGs from API
-const fallbackImg = "";
 
 let galleryIndex = 0; // Current IMG being displayed
 let isCollapsed = false; // Is the gallery currently collapsed?
@@ -76,12 +79,22 @@ initializeGallery(); // Initialize and configure the gallery
 function initializeGallery() {
   for (let i = 0; i < galleryLength; i++) {
     galleryLib.push(
-      new GalleryEntry(i, localImgs[i].path, localImgs[i].alt, galleryImgs[i])
+      new GalleryEntry(
+        i,
+        localImgs[i].path,
+        localImgs[i].alt,
+        galleryImgs[i],
+        localImgs[i].thumb
+      )
     );
   }
 
-  mainImgElement.src = galleryLib[galleryIndex].imgPath;
-  mainImgElement.alt = galleryLib[galleryIndex].altText;
+  updateMainImg(
+    galleryLib[galleryIndex].imgPath,
+    galleryLib[galleryIndex].altText
+  );
+
+  clearFormInput();
 }
 
 /* #endregion INIT. */
@@ -96,14 +109,15 @@ function resetGallery() {
   clearFormInput();
 }
 
-function updateMainImgFromSelection(imgIndex, imgPath, altText) {
-  updateMainImg(imgPath, altText);
-  galleryIndex = imgIndex;
+function updateMainImgFromSelection(entry) {
+  updateMainImg(entry.imgPath, entry.altText);
+  galleryIndex = entry.index;
 }
 
 function updateMainImg(imgPath, altText) {
   mainImgElement.src = imgPath;
   mainImgElement.alt = altText;
+  mainImgElement.title = altText;
 }
 /* #endregion GALLERY STATE */
 /* -------------------- */
@@ -114,7 +128,7 @@ function nextImg() {
 
   if (galleryIndex >= galleryLib.length) galleryIndex = 0;
 
-  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imgPath);
+  updateMainImgFromSelection(galleryLib[galleryIndex]);
 }
 
 function prevImg() {
@@ -122,20 +136,21 @@ function prevImg() {
 
   if (galleryIndex < 0) galleryIndex = galleryLib.length - 1;
 
-  updateMainImgFromSelection(galleryIndex, galleryLib[galleryIndex].imgPath);
+  updateMainImgFromSelection(galleryLib[galleryIndex]);
 }
 
 function toggleCollapse() {
   if (!isCollapsed) {
     galleryParent.classList.add("hide");
     collapseBtn.innerText = "v";
+    collapseBtn.ariaLabel = "Open the image selection";
     isCollapsed = true;
     return;
   }
 
   galleryParent.classList.remove("hide");
   collapseBtn.innerText = "^";
-  //
+  collapseBtn.ariaLabel = "Collapse the image selection";
   isCollapsed = false;
 }
 /* #endregion GALLERY NAV */

@@ -10,6 +10,7 @@ async function getNewRandomImg() {
   responseText.textContent = `RESPONSE OK?: ${resp.ok}`;
 
   if (!resp.ok) {
+    responseText.textContent += "Unable to retrieve alt data.";
     getNewRandomImgNoApi();
     return;
   }
@@ -24,6 +25,7 @@ async function getNewSearchImg(searchTerm) {
   responseText.textContent = `RESPONSE OK?: ${resp.ok}`;
 
   if (!resp.ok) {
+    responseText.textContent += "Unable to retrieve alt data.";
     getNewSearchImgNoApi(searchTerm);
     return;
   }

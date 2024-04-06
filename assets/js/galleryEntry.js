@@ -1,14 +1,16 @@
 class GalleryEntry {
-  constructor(index, imgPath, altText, thumbnail) {
+  constructor(index, imgPath, altText, imgElement, thumbImg) {
     this.index = index;
     this.imgPath = imgPath;
     this.altText = altText;
-    this.thumbnail = thumbnail;
+    this.thumbImg = thumbImg;
+    this.imgElement = imgElement;
 
-    this.thumbnail.src = imgPath;
-    this.thumbnail.alt = altText;
-    this.thumbnail.addEventListener("click", () => {
-      updateMainImgFromSelection(this.index, this.imgPath, this.altText);
+    this.imgElement.src = thumbImg;
+    this.imgElement.alt = altText;
+    this.imgElement.title = altText;
+    this.imgElement.addEventListener("click", () => {
+      updateMainImgFromSelection(this);
     });
   }
 }
