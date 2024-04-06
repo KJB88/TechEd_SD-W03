@@ -5,42 +5,49 @@
 //TODO: Accessibility (colourblindness, screen reading/ARIA/, physical impairment keyboard events)
 // TODO: Center scroll bar to selected image
 
+/* Collection of local data */
 const localImgs = [
   {
     path: "./assets/img/arthas1.jpg",
     thumb: "./assets/img/thumbnails/arthas1_thumb.webp",
     alt: "Sleepy tuxedo cat",
+    title: "He's soooooo sleepy!",
   },
   {
     path: "./assets/img/arthas2.jpg",
     thumb: "./assets/img/thumbnails/arthas2_thumb.webp",
     alt: "Curious tuxedo cat",
+    title: "What could he have seen?!",
   },
   {
     path: "./assets/img/loki1.jpg",
     thumb: "./assets/img/thumbnails/loki1_thumb.webp",
     alt: "Grumpy void cat",
+    title: "Uh oh, it looks like we disturbed her nap!",
   },
   {
     path: "./assets/img/loki2.jpg",
     thumb: "./assets/img/thumbnails/loki2_thumb.webp",
     alt: "Void cat loaf",
+    title: "Even the darkest of voids must loaf.",
   },
   {
     path: "./assets/img/luna1.jpg",
     thumb: "./assets/img/thumbnails/luna1_thumb.webp",
     alt: "Comfortable tortoiseshell cat",
+    title: "The comfiest of beans.",
   },
   {
     path: "./assets/img/luna2.jpg",
     thumb: "./assets/img/thumbnails/luna2_thumb.webp",
     alt: "Curious tortoiseshell cat",
+    title: "Oh lawd, she comin'!",
   },
 ];
 
 const galleryLib = []; // Gallery Entry collection
 const galleryLength = 6; // Initial amount of entries displayed in selection
-
+const mainImgPrefix = "Gallery Highlight: ";
 const mainImgElement = document.getElementById("main-img"); // Main IMG element
 const galleryOuter = document.getElementById("gallery-outer");
 
@@ -84,14 +91,16 @@ function initializeGallery() {
         localImgs[i].path,
         localImgs[i].alt,
         galleryImgs[i],
-        localImgs[i].thumb
+        localImgs[i].thumb,
+        localImgs[i].title
       )
     );
   }
 
   updateMainImg(
     galleryLib[galleryIndex].imgPath,
-    galleryLib[galleryIndex].altText
+    galleryLib[galleryIndex].altText,
+    galleryLib[galleryIndex].titleText
   );
 
   clearFormInput();
@@ -110,14 +119,14 @@ function resetGallery() {
 }
 
 function updateMainImgFromSelection(entry) {
-  updateMainImg(entry.imgPath, entry.altText);
+  updateMainImg(entry.imgPath, entry.altText, entry.titleText);
   galleryIndex = entry.index;
 }
 
-function updateMainImg(imgPath, altText) {
+function updateMainImg(imgPath, altText, titleText) {
   mainImgElement.src = imgPath;
-  mainImgElement.alt = altText;
-  mainImgElement.title = altText;
+  mainImgElement.alt = `${mainImgPrefix}${altText}`;
+  mainImgElement.title = titleText;
 }
 /* #endregion GALLERY STATE */
 /* -------------------- */
