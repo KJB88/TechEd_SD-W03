@@ -27,6 +27,15 @@ const nextBtn = document.getElementById("next-btn"); // Cycle forward in gallery
 const prevBtn = document.getElementById("prev-btn"); // Cycle backwards in gallery button
 const refreshBtn = document.getElementById("refresh-btn"); // Refresh Gallery button
 const collapseBtn = document.getElementById("collapse-btn"); // Collapse gallery button
+const navDropdown = document.getElementById("nav-dropdown"); // Navigation Dropdown
+const navOptions = navDropdown.options; // Options within dropdown
+
+// Assign listeners to each option
+for (let i = 0; i < navOptions.length; i++) {
+  navOptions[i].addEventListener("click", () => {
+    window.open(navOptions[i].value);
+  });
+}
 
 /* #endregion VARS. */
 /* -------------------- */
@@ -36,7 +45,6 @@ nextBtn.addEventListener("click", nextImg);
 prevBtn.addEventListener("click", prevImg);
 refreshBtn.addEventListener("click", resetGallery);
 collapseBtn.addEventListener("click", toggleCollapse);
-
 initializeGallery(); // Initialize and configure the gallery
 
 function initializeGallery() {

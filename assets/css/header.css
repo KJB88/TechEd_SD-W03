@@ -1,9 +1,46 @@
 /* HEADER */
+/* Small screens */
 @media (max-width: 600px) {
   header h1 {
-    margin: 0;
     font-size: calc(2vw + 2vh);
+    overflow: hidden;
+    text-wrap: wrap;
+    text-align: center;
+    min-width: 250px;
   }
+
+  header h1:after {
+    content: "Not-Splash";
+  }
+  nav select {
+    visibility: visible;
+  }
+  nav ul {
+    visibility: hidden;
+  }
+}
+/* Wide Screens */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 32px;
+  }
+
+  header h1:after {
+    content: "Not-Splash: Totally Original Gallery!";
+  }
+
+  nav select {
+    visibility: hidden;
+  }
+
+  nav ul {
+    visibility: visible;
+  }
+}
+
+/* Commons */
+header h1 {
+  margin: 0;
 }
 
 header {
@@ -15,12 +52,6 @@ header {
   z-index: 3;
 }
 
-@media (min-width: 600px) {
-  header h1 {
-    margin: 0;
-    font-size: 32px;
-  }
-}
 /* Nav */
 nav {
   display: flex;
@@ -31,6 +62,20 @@ nav {
   padding-top: 2.5px;
   align-content: center;
   font-weight: bold;
+}
+
+nav select {
+  position: absolute;
+  top: 85%;
+  height: 25px;
+}
+
+nav a {
+  text-align: center;
+  width: max-content;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 nav ul {
@@ -52,14 +97,6 @@ nav ul li {
   box-sizing: border-box;
   width: max-content;
   list-style-type: none;
-}
-
-nav a {
-  text-align: center;
-  width: max-content;
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1rem;
 }
 
 nav a:hover {
