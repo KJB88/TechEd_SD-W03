@@ -29,51 +29,66 @@
   }
 }
 
+@media (min-height: 450px) {
+  nav {
+    visibility: visible;
+  }
+
+  .search-div {
+    visibility: visible;
+  }
+}
+
+@media (max-height: 450px) {
+  nav {
+    visibility: hidden;
+  }
+
+  header .subtitle {
+    visibility: hidden;
+  }
+
+  .search-div {
+    visibility: hidden;
+  }
+}
+
 /* UNIVERSAL */
 header {
   position: fixed;
-  margin-top: 5vh;
   width: 100vw;
-  height: 5vh;
+  height: 50px;
   background-color: transparent;
   z-index: 3;
 }
 
 /* Nav */
 nav {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  height: inherit;
-  padding-top: 2.5px;
-  align-content: center;
   font-weight: bold;
+  padding-top: 2.5px;
+  height: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  align-content: center;
 }
 
 header h1 {
+  text-align: center;
+  width: 100vw;
   margin: 0;
+  margin-bottom: -10px;
 }
 
 /* Totally Original Gallery! */
 header .subtitle {
-  position: fixed;
+  text-align: center;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   font-size: 16px;
   top: 4.5%;
-}
-
-nav select {
-  position: absolute;
-  top: 85%;
-  height: 25px;
-}
-
-nav a {
-  text-align: center;
-  width: max-content;
-  color: var(--text-color);
-  text-decoration: none;
-  font-size: 1rem;
 }
 
 nav ul {
@@ -81,14 +96,13 @@ nav ul {
   margin: 0;
 
   width: 100%;
-  height: 35px;
   padding-left: var(--grid-gappage);
 
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 1rem;
 }
 
 nav ul li {
@@ -99,4 +113,12 @@ nav ul li {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+nav a {
+  text-align: center;
+  width: max-content;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
 }

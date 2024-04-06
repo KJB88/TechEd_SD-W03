@@ -43,6 +43,19 @@
   }
 }
 
+@media (max-height: 400px) {
+  #gallery-outer {
+    top: 10%;
+    left: 50%;
+  }
+}
+
+@media (min-height: 400px) {
+  #gallery-outer {
+    top: 120px;
+    left: 50%;
+  }
+}
 /* #endregion RESPONSIVITY */
 /* -------------------- */
 /* UNIVERSAL */
@@ -66,12 +79,9 @@ main {
 }
 
 /* GALLERY */
-/* Outer Gallery
-Contains refresh button, collapse button & gallery selection */
+/* Outer Gallery */
 #gallery-outer {
   position: absolute;
-  top: 120px;
-  left: 50%;
 
   display: flex;
   flex-flow: column nowrap;
@@ -148,6 +158,7 @@ Contains refresh button, collapse button & gallery selection */
   width: auto;
   height: max-content;
 }
+
 .search-form {
   display: flex;
   flex-flow: column nowrap;
