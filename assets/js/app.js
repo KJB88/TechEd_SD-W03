@@ -3,8 +3,6 @@
 /* #region VARS. */
 
 //TODO: screen reading/ARIA
-//TODO: physical impairment keyboard events
-//TODO: Center scroll bar to selected image
 
 /* Collection of local data */
 const localImgs = [
@@ -55,20 +53,19 @@ const galleryOuter = document.getElementById("gallery-outer");
 // Select all IMG tags within gallery-container
 const galleryParent = document.getElementById("gallery-container");
 const galleryImgs = galleryParent.querySelectorAll("img");
-
+const tabbables = document.querySelectorAll(".tabbable");
 let galleryIndex = 0; // Current IMG being displayed
 let isCollapsed = false; // Is the gallery currently collapsed?
 
 const nextBtn = document.getElementById("next-btn"); // Cycle forward in gallery button
 const prevBtn = document.getElementById("prev-btn"); // Cycle backwards in gallery button
 const collapseBtn = document.getElementById("collapse-btn"); // Collapse gallery button
-const navDropdown = document.getElementById("nav-dropdown"); // Navigation Dropdown
-const navOptions = navDropdown.options; // Options within dropdown
 
-// Assign listeners to each option
-for (let i = 0; i < navOptions.length; i++) {
-  navOptions[i].addEventListener("click", () => {
-    window.open(navOptions[i].value);
+let currentFocus = 0;
+
+for (let i = 0; i < tabbables.length; i++) {
+  tabbables[i].addEventListener("focus", () => {
+    currentFocus = i;
   });
 }
 
@@ -76,14 +73,15 @@ for (let i = 0; i < navOptions.length; i++) {
 /* -------------------- */
 /* #region INIT. */
 
+// Detect input and handle accordingly
 document.addEventListener("keydown", (e) => {
   if (e.key == "Enter") updateMainImgFromSelection(galleryLib[galleryIndex]);
+  else arrowKeyNavigation(e);
 });
-nextBtn.addEventListener("click", nextImg);
-prevBtn.addEventListener("click", prevImg);
-collapseBtn.addEventListener("click", toggleCollapse);
 
-galleryIndex = Math.floor(Math.random() * galleryLength); // Randomise starting main Img
+nextBtn.addEventListener("click", nextImg); // Cycle to next IMG
+prevBtn.addEventListener("click", prevImg); // Cycle to previous IMG
+collapseBtn.addEventListener("click", toggleCollapse); // Un/Collapse the gallery
 
 initializeGallery(); // Initialize and configure the gallery
 
@@ -101,12 +99,15 @@ function initializeGallery() {
     );
   }
 
+  galleryIndex = Math.floor(Math.random() * galleryLength); // Randomise starting main Img
+
   updateMainImg(
     galleryLib[galleryIndex].imgPath,
     galleryLib[galleryIndex].altText,
     galleryLib[galleryIndex].titleText
   );
 
+  snapToElement(galleryLib[galleryIndex].imgElement);
   clearFormInput();
 }
 
@@ -167,6 +168,29 @@ function toggleCollapse() {
   isCollapsed = false;
 }
 
-function sliderSnap() {}
+function arrowKeyNavigation(event) {
+  if (event.key === "ArrowDown" || event.key === "ArrowLeft") {
+    do {
+      currentFocus++;
+
+      if (currentFocus > tabbables.length - 1) currentFocus = 0;
+      console.log(
+        `${tabbables[currentFocus].nodeName} ${tabbables[currentFocus].innerText}`
+      );
+    } while (!tabbables[currentFocus].checkVisibility({}));
+
+    tabbables[currentFocus].focus();
+  } else if (event.key === "ArrowUp" || event.key === "ArrowRight") {
+    do {
+      currentFocus--;
+      if (currentFocus < 0) currentFocus = tabbables.length - 1;
+      console.log(
+        `${tabbables[currentFocus].nodeName} ${tabbables[currentFocus].innerText}`
+      );
+    } while (!tabbables[currentFocus].checkVisibility({}));
+
+    tabbables[currentFocus].focus();
+  }
+}
 /* #endregion GALLERY NAV */
 /* -------------------- */

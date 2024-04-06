@@ -33,37 +33,31 @@
     <header>
         <!-- NAV -->
         <nav>
-            <h1 class="no-pointer-events drop-shadow-2px" aria-label="Title of the website: Not-Splash!">Not-Splash
+            <h1 class="no-pointer-events drop-shadow-2px" tabindex="-1" aria-label="Title of the website: Not-Splash!">
+                Not-Splash
             </h1>
-            <h2 class="no-pointer-events drop-shadow-2px subtitle"
+            <h2 class="no-pointer-events drop-shadow-2px subtitle" tabindex="-1"
                 aria-label="Subtitle of the website: Totally Original Gallery!">Totally Original Gallery!</h2>
-            <select id="nav-dropdown" class="drop-shadow-2px"
-                aria-label="Dropdown containing links related to this website.">
-                <option value="https://github.com/KJB88/TechEd_SD-W03"
-                    aria-label="A link to access the repo for this website.">Repo</option>
-                <option value="https://github.com/KJB88"
-                    aria-label="A link to access the Github of the author of this website.">Github</option>
-                <option value="https://www.linkedin.com/in/kevin-barr1988/"
-                    aria-label="A link to access the LinkedIn of the author of this website.">LinkedIn</option>
-                <option value="https://kjb88.github.io/"
-                    aria-label="A link to access the Personal Website of the author of this website.">Website</option>
-            </select>
+            <!-- Stylised Row -->
             <ul>
                 <li>
-                    <a href="https://github.com/KJB88/TechEd_SD-W03" class="drop-shadow-2px"
-                        aria-label="A link to access the repo for this website.">Repo</a>
+                    <a href="https://github.com/KJB88/TechEd_SD-W03" class="drop-shadow-2px tabbable"
+                        aria-label="A link to access the repo for this website." target="_blank">Repo</a>
                 </li>
                 <li>
-                    <a href="https://github.com/KJB88" class="drop-shadow-2px"
-                        aria-label="A link to access the Github of the author of this website.">Github</a>
+                    <a href="https://github.com/KJB88" class="drop-shadow-2px tabbable"
+                        aria-label="A link to access the Github of the author of this website."
+                        target="_blank">Github</a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/kevin-barr1988/" class="drop-shadow-2px"
-                        aria-label="A link to access the LinkedIn of the author of this website.">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/kevin-barr1988/" class="drop-shadow-2px tabbable"
+                        aria-label="A link to access the LinkedIn of the author of this website."
+                        target="_blank">LinkedIn</a>
                 </li>
                 <li>
-                    <a href="https://kjb88.github.io/" class="drop-shadow-2px"
-                        aria-label="A link to access the Personal Website of the author of this website.">Website</a>
+                    <a href="https://kjb88.github.io/" class="drop-shadow-2px tabbable"
+                        aria-label="A link to access the Personal Website of the author of this website."
+                        target="_blank">Website</a>
                 </li>
             </ul>
         </nav>
@@ -76,41 +70,48 @@
             <img src="" alt="The ol' image gallery!" title="" id="main-img" class="drop-shadow-2px" />
         </div>
         <!-- Gallery Selection -->
-        <div id="gallery-outer">
-            <button id="collapse-btn" class="drop-shadow-2px"
+        <div id="gallery-outer" tabindex="-1">
+            <button id="collapse-btn" class="drop-shadow-2px tabbable"
                 aria-label="Collapse the image selection.">&#x005E</button>
             <div id="gallery-container" tabindex="-1">
-                <img src="" alt="" title="" class="gallery-img" tabindex="1" />
-                <img src="" alt="" title="" class="gallery-img" tabindex="2" />
-                <img src="" alt="" title="" class="gallery-img" tabindex="3" />
-                <img src="" alt="" title="" class="gallery-img" tabindex="4" />
-                <img src="" alt="" title="" class="gallery-img" tabindex="5" />
-                <img src="" alt="" title="" class="gallery-img" tabindex="6" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
+                <img src="" alt="" title="" class="gallery-img tabbable" tabindex="0" />
             </div>
         </div>
 
         <!-- Cycle Gallery -->
-        <div class="gallery-btn-div">
-            <button id="prev-btn" class="drop-shadow-2px">&lt;</button>
-            <button id="next-btn" class="drop-shadow-2px"> &gt;</button>
+        <div class="gallery-btn-div" tabindex="-1">
+            <button id="prev-btn" class="drop-shadow-2px tabbable"
+                aria-label="Get the previous image in the gallery selection.">&lt;</button>
+            <button id="next-btn" class="drop-shadow-2px tabbable"
+                aria-label="Get the next image in the gallery selection."> &gt;</button>
         </div>
 
         <!-- Search via Query -->
-        <form class="search-form drop-shadow-2px"
-            aria-label="Input form to type in a search query and find an image based on it.">
-            <span id="response-text">Search or Randomise using Unsplash!</span>
-            <input id="search-input-field" placeholder="Search for a keyword!"
-                aria-label="Type a keyword here to search for an image relating to the keyword." />
-            <div class="btn-div">
-                <button id="random-btn">Random on Unsplash!</button>
-                <button id="search-btn">Search on Unsplash!</button>
-            </div>
-        </form>
+        <div class="search-div drop-shadow-2px"
+            aria-label="Functionality to search for an image by keyword or get a random image.">
+            <form class="search-form" aria-label="Input form to type in a search query and find an image based on it."
+                tabindex="-1">
+                <span id="response-text" tabindex="-1">Search or Randomise using Unsplash!</span>
+                <input id="search-input-field" placeholder="Search for a keyword!" class="tabbable"
+                    aria-label="Type a keyword here to search for an image relating to the keyword." />
+                <button id="search-btn" class="tabbable"
+                    aria-label="Submit your search term to get an image based on your search keyword from Unsplash!">Search
+                    by Keyword</button>
+            </form>
+            <button id="random-btn" class="tabbable" aria-label="Get a random image from Unsplash!">Get Random
+                Image</button>
+        </div>
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <div class="drop-shadow-2px" id="rainbow-text">Kev Barr</div>
+        <div class="drop-shadow-2px" id="rainbow-text"
+            aria-label="The author's signature and apparent attempt at having some level of creativity.">Kev Barr</div>
     </footer>
 </body>
 

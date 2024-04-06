@@ -12,11 +12,9 @@
   header .subtitle {
     visibility: hidden;
   }
-  nav select {
-    visibility: visible;
-  }
-  nav ul {
-    visibility: hidden;
+
+  header ul li a {
+    font-size: calc(1vh + 1vw);
   }
 }
 
@@ -29,20 +27,12 @@
   header .subtitle {
     visibility: visible;
   }
-
-  nav select {
-    visibility: hidden;
-  }
-
-  nav ul {
-    visibility: visible;
-  }
 }
 
 /* UNIVERSAL */
 header {
   position: fixed;
-  margin-top: 25px;
+  margin-top: 5vh;
   width: 100vw;
   height: 5vh;
   background-color: transparent;
@@ -69,7 +59,7 @@ header h1 {
 header .subtitle {
   position: fixed;
   font-size: 16px;
-  top: 3%;
+  top: 4.5%;
 }
 
 nav select {
@@ -95,10 +85,10 @@ nav ul {
   padding-left: var(--grid-gappage);
 
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.25rem;
 }
 
 nav ul li {
