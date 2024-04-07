@@ -169,7 +169,7 @@ function toggleCollapse() {
 }
 
 function arrowKeyNavigation(event) {
-  if (event.key === "ArrowDown" || event.key === "ArrowLeft") {
+  if (event.key === "ArrowDown" || event.key === "ArrowRight") {
     do {
       currentFocus++;
 
@@ -180,7 +180,7 @@ function arrowKeyNavigation(event) {
     } while (!tabbables[currentFocus].checkVisibility({}));
 
     tabbables[currentFocus].focus();
-  } else if (event.key === "ArrowUp" || event.key === "ArrowRight") {
+  } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
     do {
       currentFocus--;
       if (currentFocus < 0) currentFocus = tabbables.length - 1;
